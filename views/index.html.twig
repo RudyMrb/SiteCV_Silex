@@ -1,0 +1,124 @@
+{% extends "layout_front.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Ecran d'Accueil -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+          {% for perso in persos %}
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading animated bounceInDown">{{ perso.prenom }} {{ perso.nom }}</h1>
+                    <div class="logo">
+                      <a href="{{ perso.github }}" target="_blank" class="logol"><i class="fa fa-github animated bounceInLeft" aria-hidden="true"></i></a>
+                      <a href="{{ perso.linkedin }}" target="_blank" class="logol"><i class="fa fa-linkedin-square animated bounceInRight" aria-hidden="true"></i></a>
+                    </div>
+                    <br>
+                    <span class="intro-text typed"></span><br>
+                    <a href="#competences" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</header>
+<section id="competences" class="container content-section text-center">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div class="skill">
+          <div>
+              <span>html5</span>
+              <span class="progress"></span>
+          </div>
+
+          <div>
+              <span>css3</span>
+              <span class="progress"></span>
+          </div>
+
+          <div>
+              <span>javascript</span>
+              <span class="progress"></span>
+          </div>
+
+          <div>
+              <span>PHP</span>
+              <span class="progress"></span>
+          </div>
+          <div>
+              <span>SQL</span>
+              <span class="progress"></span>
+          </div>
+
+          <div>
+              <span>Ajax</span>
+              <span class="progress"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- Portfolio -->
+<section id="realisations" class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Mes réalisations</h2>
+        <div class="row">
+          {% for portfolio in portfolios %}
+          <div class="block col-md-6">
+            <a href="{{ portfolio.lien }}" target="_blank"><h3>{{ portfolio.name }}</h3>
+            <img src="{{ portfolio.img }}" alt="" width="100%"></a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="experiences" class="content-section text-center">
+    <div class="row">
+      <h2>Parcours et Expériences</h2>
+      <div class="col-lg-8 col-lg-offset-2 timeline">
+        <ul class="timeline">
+          {% set i = 0 %}
+          {% for experience in experiences %}
+            {% if i % 2 == 0 %}
+              <li>
+            {% else %}
+              <li class="timeline-inverted">
+            {% endif %}
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">{{ experience.poste }}</h4>
+                  <img src="{{ experience.img }}" alt="" width="20%">
+                  <p><small class="text-muted">{{ experience.debut }} {{ experience.fin }}</small></p>
+                </div>
+                <div class="timeline-body">
+                  <p>FLY - CLAY SOUILLY</p>
+                  <p><small class="text-muted">{{ experience.content }}</small></p>
+                </div>
+              </div>
+            </li>
+            {% set i = i + 1 %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+</section>
+
+
+<section id="contact"></section>
+
+{% endblock %}
