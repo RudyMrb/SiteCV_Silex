@@ -19,6 +19,7 @@ class PersoType extends AbstractType
             ->add('github', TextType::class)
             ->add('codepen', TextType::class)
             ->add('linkedin', TextType::class)
+            ->add('cv', TextType::class)
             ->add('tel', TextType::class)
             ->add('adresse', TextType::class);
     }

@@ -2,10 +2,10 @@
 
 // Deployment on Heroku with ClearDB for MySQL
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+$server = 'ma6tvacoder.org';
+$username = 'rudyhericourt';
+$password = '3@xBe2b2';
+$db = 'rudy_DB';
 
 // Doctrine (db)
 $app['db.options'] = array(
@@ -20,3 +20,7 @@ $app['db.options'] = array(
 
 // define log parameters
 $app['monolog.level'] = 'WARNING';
+
+
+// enable the debug mode
+$app['debug'] = true;

@@ -23,6 +23,7 @@ class ExperienceType extends AbstractType
           'Contrat' => 'Contrat',
           'Stage' => 'Stage',
           'Benevolat' => 'Benevolat',
+          'Diplome' => 'Diplome',
         ),
         'attr' => array('class' => 'col-md-12')
       ))

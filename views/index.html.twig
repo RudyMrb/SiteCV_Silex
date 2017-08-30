@@ -5,6 +5,7 @@
 {% block content %}
 <!-- Ecran d'Accueil -->
 <header class="intro">
+
     <div class="intro-body">
         <div class="container">
           {% for perso in persos %}
@@ -13,7 +14,8 @@
                     <h1 class="brand-heading animated bounceInDown">{{ perso.prenom }} {{ perso.nom }}</h1>
                     <div class="logo">
                       <a href="{{ perso.github }}" target="_blank" class="logol"><i class="fa fa-github animated bounceInLeft" aria-hidden="true"></i></a>
-                      <a href="{{ perso.linkedin }}" target="_blank" class="logol"><i class="fa fa-linkedin-square animated bounceInRight" aria-hidden="true"></i></a>
+                      <a href="{{ perso.linkedin }}" target="_blank" class="logol"><i class="fa fa-linkedin-square animated rotateIn" aria-hidden="true"></i></a>
+                      <a href="{{ perso.cv }}" target="_blank" class="logol"><i class="fa fa-cloud-download animated bounceInRight" aria-hidden="true"></i></a>
                     </div>
                     <br>
                     <span class="intro-text typed"></span><br>
@@ -22,54 +24,58 @@
                     </a>
                 </div>
             </div>
-            {% endfor %}
+          {% endfor %}
         </div>
     </div>
 </header>
-<section id="competences" class="container content-section text-center">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-      <h2>Compétences</h2>
-      <div class="skills">
-        <div class="skill">
-          <div>
+<section id="competences">
+  <div class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Compétences</h2>
+        <div class="skills">
+          <div class="skill">
+            <div>
               <span>html5</span>
               <span class="progress"></span>
-          </div>
+            </div>
 
-          <div>
+            <div>
               <span>css3</span>
               <span class="progress"></span>
-          </div>
+            </div>
 
-          <div>
+            <div>
               <span>javascript</span>
               <span class="progress"></span>
-          </div>
+            </div>
 
-          <div>
+            <div>
               <span>PHP</span>
               <span class="progress"></span>
-          </div>
-          <div>
+            </div>
+            <div>
               <span>SQL</span>
               <span class="progress"></span>
-          </div>
+            </div>
 
-          <div>
+            <div>
               <span>Ajax</span>
               <span class="progress"></span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <hr>
 
 <!-- Portfolio -->
-<section id="realisations" class="container content-section text-center">
+<section id="realisations">
+  <div class="container content-section text-center">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <h2>Mes réalisations</h2>
@@ -83,42 +89,70 @@
         </div>
       </div>
     </div>
+  </div>
 </section>
 
 <hr>
 
 <section id="experiences" class="content-section text-center">
-    <div class="row">
-      <h2>Parcours et Expériences</h2>
-      <div class="col-lg-8 col-lg-offset-2 timeline">
-        <ul class="timeline">
-          {% set i = 0 %}
-          {% for experience in experiences %}
-            {% if i % 2 == 0 %}
-              <li>
-            {% else %}
-              <li class="timeline-inverted">
-            {% endif %}
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4 class="timeline-title">{{ experience.poste }}</h4>
-                  <img src="{{ experience.img }}" alt="" width="20%">
-                  <p><small class="text-muted">{{ experience.debut }} {{ experience.fin }}</small></p>
-                </div>
-                <div class="timeline-body">
-                  <p>FLY - CLAY SOUILLY</p>
-                  <p><small class="text-muted">{{ experience.content }}</small></p>
-                </div>
+  <div class="row">
+    <h2>Parcours et Expériences</h2>
+    <div class="col-lg-8 col-lg-offset-2 timeline">
+      <ul class="timeline">
+        {% set i = 0 %}
+        {% for experience in experiences %}
+          {% if i % 2 == 0 %}
+            <li>
+          {% else %}
+            <li class="timeline-inverted">
+          {% endif %}
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">{{ experience.contrat }}</h4>
+                <img src="{{ experience.img }}" alt="" width="20%">
+                <p><small class="text-muted">{{ experience.debut |date("d-m-Y") }} / {{ experience.fin |date("d-m-Y") }}</small></p>
               </div>
-            </li>
-            {% set i = i + 1 %}
-          {% endfor %}
-        </ul>
-      </div>
+              <div class="timeline-body">
+                <p>{{ experience.poste }}</p>
+                <p><small class="text-muted">{{ experience.content }}</small></p>
+              </div>
+            </div>
+          </li>
+          {% set i = i + 1 %}
+        {% endfor %}
+      </ul>
     </div>
+  </div>
 </section>
 
+<hr>
 
-<section id="contact"></section>
+<section id="contact">
+  <div class="container content-section text-center">
+    <div class="col-lg-6 col-lg-offset-3">
+      <h1>CONTACT</h1>
+      <form class="row">
+        <div class="form-group col-sm-6">
+          <label for="nom">Votre nom</label>
+          <input type="nom" class="form-control" id="nom">
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="email">Votre Email</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="objet">Objet</label>
+          <input type="objet" class="form-control" id="objet">
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="message">Message</label>
+          <textarea name="message" class="form-control" rows="8" cols="80"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

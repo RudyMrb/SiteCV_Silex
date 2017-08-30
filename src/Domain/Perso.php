@@ -33,6 +33,9 @@ class Perso
     // LinkedIn
     private $linkedin;
 
+    // CV
+    private $cv;
+
     // Prenom
     private $prenom;
 
@@ -69,6 +72,13 @@ class Perso
     }
     public function getCodepen(){
       return $this->codepen;
+    }
+    public function setCv( $cv ){
+      $this->cv = $cv;
+      return $this;
+    }
+    public function getCv(){
+      return $this->cv;
     }
 
     public function setLinkedin( $linkedin ){

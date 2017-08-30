@@ -20,12 +20,16 @@ body {
 }
 
 .intro{
-  background-image: url('https://newevolutiondesigns.com/images/freebies/black-wallpaper-10.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: linear-gradient(to right, rgb(93, 93, 93), rgb(203, 180, 212));
   height: 100vh;
 }
-
+.intro-body {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  background-size: cover;
+  background-image: url('https://wallpapercave.com/wp/N9fPG9Z.jpg');
+}
 .navbar-custom .nav li.active a {
   border-radius: 5px;
 }
@@ -159,8 +163,12 @@ a:hover {
 .skills .skill > div:nth-of-type(5) span:last-child{background: ##4A148C}
 .skills .skill > div:nth-of-type(6) span:last-child{background: ##4A148C}
 
+hr {
+  padding: 0px;
+  margin: 0px;
+}
 
-img#mo7amed{
+img #realisation{
   border-radius: 50%;
   position: fixed;
   bottom: 10px;
@@ -169,13 +177,25 @@ img#mo7amed{
   transition: all 0.4s linear;
 }
 
-img#mo7amed:hover{
+img #realisation:hover{
   transform: scale(1.1,1.1);
   box-shadow: 5px 5px 15px #4A148C
 }
 
-section {
-  margin-bottom: 200px;
+#realisations {
+  background: linear-gradient(to right, rgb(93, 93, 93), rgb(203, 180, 212));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  background-image: url('https://www.walldevil.com/wallpapers/w01/517776-clouds-contrasting-proportions-fantasy-art-illumination-outer-space-planetary-horizons-planets.jpg');
+}
+
+.content-section{
+  height: 100vh;
+}
+
+#experiences.content-section{
+  height: auto;
 }
 
 /** Time Line **/
@@ -361,4 +381,12 @@ section {
             left: -14px;
             right: auto;
         }
+}
+
+#contact {
+  background: linear-gradient(to right, rgb(93, 93, 93), rgb(203, 180, 212));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  background-image: url('https://www.hdwallpapers.in/walls/beautiful_night-wide.jpg');
 }
