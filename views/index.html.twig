@@ -4,93 +4,98 @@
 
 {% block content %}
 <!-- Ecran d'Accueil -->
-<header class="intro">
-
+<header>
+  <div class="intro">
     <div class="intro-body">
-        <div class="container">
-          {% for perso in persos %}
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading animated bounceInDown">{{ perso.prenom }} {{ perso.nom }}</h1>
-                    <div class="logo">
-                      <a href="{{ perso.github }}" target="_blank" class="logol"><i class="fa fa-github animated bounceInLeft" aria-hidden="true"></i></a>
-                      <a href="{{ perso.linkedin }}" target="_blank" class="logol"><i class="fa fa-linkedin-square animated rotateIn" aria-hidden="true"></i></a>
-                      <a href="{{ perso.cv }}" target="_blank" class="logol"><i class="fa fa-cloud-download animated bounceInRight" aria-hidden="true"></i></a>
-                    </div>
-                    <br>
-                    <span class="intro-text typed"></span><br>
-                    <a href="#competences" class="btn btn-circle page-scroll">
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
-                </div>
+      <div class="container">
+        {% for perso in persos %}
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="photo"></div>
+            <h1 class="brand-heading animated bounceInDown">{{ perso.prenom }} {{ perso.nom }}</h1>
+            <div class="logo">
+              <a href="{{ perso.github }}" target="_blank" class="logol"><i class="fa fa-github animated bounceInLeft" aria-hidden="true"></i></a>
+              <a href="{{ perso.linkedin }}" target="_blank" class="logol"><i class="fa fa-linkedin-square animated rotateIn" aria-hidden="true"></i></a>
+              <a href="{{ perso.cv }}" target="_blank" class="logol"><i class="fa fa-cloud-download animated bounceInRight" aria-hidden="true"></i></a>
             </div>
-          {% endfor %}
+            <br>
+            <span class="intro-text typed"></span><br>
+            <a href="#competences" class="btn btn-circle page-scroll">
+              <i class="fa fa-angle-double-down animated"></i>
+            </a>
+          </div>
         </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 </header>
+
 <section id="competences">
-  <div class="container content-section text-center">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h2>Compétences</h2>
-        <div class="skills">
-          <div class="skill">
-            <div>
-              <span>html5</span>
-              <span class="progress"></span>
-            </div>
+<div class="container content-section text-center">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div class="skill">
+          <div>
+            <span>html5</span>
+            <span class="progress"></span>
+          </div>
 
-            <div>
-              <span>css3</span>
-              <span class="progress"></span>
-            </div>
+          <div>
+            <span>css3</span>
+            <span class="progress"></span>
+          </div>
 
-            <div>
-              <span>javascript</span>
-              <span class="progress"></span>
-            </div>
+          <div>
+            <span>javascript</span>
+            <span class="progress"></span>
+          </div>
 
-            <div>
-              <span>PHP</span>
-              <span class="progress"></span>
-            </div>
-            <div>
-              <span>SQL</span>
-              <span class="progress"></span>
-            </div>
+          <div>
+            <span>PHP</span>
+            <span class="progress"></span>
+          </div>
+          <div>
+            <span>SQL</span>
+            <span class="progress"></span>
+          </div>
 
-            <div>
-              <span>Ajax</span>
-              <span class="progress"></span>
-            </div>
+          <div>
+            <span>Ajax</span>
+            <span class="progress"></span>
           </div>
         </div>
       </div>
     </div>
-
   </div>
+
+</div>
 </section>
 
 <hr>
 
 <!-- Portfolio -->
-<section id="realisations">
-  <div class="container content-section text-center">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h2>Mes réalisations</h2>
-        <div class="row">
-          {% for portfolio in portfolios %}
-          <div class="block col-md-6">
-            <a href="{{ portfolio.lien }}" target="_blank"><h3>{{ portfolio.name }}</h3>
-            <img src="{{ portfolio.img }}" alt="" width="100%"></a>
+<div class="intro">
+  <section id="realisations">
+    <div class="container content-section text-center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>Mes réalisations</h2>
+          <div class="row">
+            {% for portfolio in portfolios %}
+            <div class="block col-md-6">
+              <a href="{{ portfolio.lien }}" target="_blank"><h3>{{ portfolio.name }}</h3>
+                <img src="{{ portfolio.img }}" alt="" width="100%" height="200"></a>
+              </div>
+              {% endfor %}
+            </div>
           </div>
-          {% endfor %}
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+</div>
 
 <hr>
 
@@ -101,11 +106,11 @@
       <ul class="timeline">
         {% set i = 0 %}
         {% for experience in experiences %}
-          {% if i % 2 == 0 %}
-            <li>
+        {% if i % 2 == 0 %}
+        <li>
           {% else %}
-            <li class="timeline-inverted">
-          {% endif %}
+          <li class="timeline-inverted">
+            {% endif %}
             <div class="timeline-panel">
               <div class="timeline-heading">
                 <h4 class="timeline-title">{{ experience.contrat }}</h4>
@@ -119,40 +124,41 @@
             </div>
           </li>
           {% set i = i + 1 %}
-        {% endfor %}
-      </ul>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<hr>
+  <hr>
+<div class="intro">
+  <section id="contact">
+    <div class="container content-section text-center">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>CONTACT</h1>
+        <form class="row">
+          <div class="form-group col-sm-6">
+            <label for="nom">Votre nom</label>
+            <input type="nom" class="form-control" id="nom">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="email">Votre Email</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group col-sm-12">
+            <label for="objet">Objet</label>
+            <input type="objet" class="form-control" id="objet">
+          </div>
+          <div class="form-group col-sm-12">
+            <label for="message">Message</label>
+            <textarea name="message" class="form-control" rows="8" cols="80"></textarea>
+          </div>
 
-<section id="contact">
-  <div class="container content-section text-center">
-    <div class="col-lg-6 col-lg-offset-3">
-      <h1>CONTACT</h1>
-      <form class="row">
-        <div class="form-group col-sm-6">
-          <label for="nom">Votre nom</label>
-          <input type="nom" class="form-control" id="nom">
-        </div>
-        <div class="form-group col-sm-6">
-          <label for="email">Votre Email</label>
-          <input type="email" class="form-control" id="email">
-        </div>
-        <div class="form-group col-sm-12">
-          <label for="objet">Objet</label>
-          <input type="objet" class="form-control" id="objet">
-        </div>
-        <div class="form-group col-sm-12">
-          <label for="message">Message</label>
-          <textarea name="message" class="form-control" rows="8" cols="80"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 {% endblock %}

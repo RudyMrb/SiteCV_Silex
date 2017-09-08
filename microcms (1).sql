@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 30 Août 2017 à 09:34
+-- Généré le :  Jeu 31 Août 2017 à 13:06
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -113,7 +113,7 @@ CREATE TABLE `t_perso` (
 --
 
 INSERT INTO `t_perso` (`perso_id`, `perso_nom`, `perso_prenom`, `perso_poste`, `perso_img`, `perso_facebook`, `perso_github`, `perso_codepen`, `perso_linkedin`, `perso_cv`, `perso_tel`, `perso_adresse`) VALUES
-(1, 'HERICOURT', 'Rudy', 'Intégrateur - Développeur Web', 'https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAufAAAAJDJkYTRiZjdlLTYzZmEtNGM4OC04MTEwLWY0N2Y1ZWMwNTVlNw.jpg', 'https://www.facebook.com/rudaxx.mrb', 'https://github.com/RudyMrb', 'https://codepen.io/RudyMrb/', 'https://www.linkedin.com/in/rudy-hericourt-84a2b8140/', 'web\\CV_rudy_hericourt_5cd0715a.pdf', '0698920504', '50 Allée Daniel FERY');
+(1, 'HERICOURT', 'Rudy', 'Intégrateur - Développeur Web', 'https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAufAAAAJDJkYTRiZjdlLTYzZmEtNGM4OC04MTEwLWY0N2Y1ZWMwNTVlNw.jpg', 'https://www.facebook.com/rudaxx.mrb', 'https://github.com/RudyMrb', 'https://codepen.io/RudyMrb/', 'https://www.linkedin.com/in/rudy-hericourt-84a2b8140/', 'CV_rudy_hericourt_5cd0715a.pdf', '0698920504', '50 Allée Daniel FERY');
 
 -- --------------------------------------------------------
 
@@ -136,7 +136,10 @@ CREATE TABLE `t_portfolio` (
 --
 
 INSERT INTO `t_portfolio` (`port_id`, `port_name`, `port_lieu`, `port_descriptif`, `port_date`, `port_img`, `port_lien`) VALUES
-(2, 'Site Perso', 'Pantin', 'Mon site personnel', '2017-08-17', 'images/Capture.PNG', 'http://rudy.hericourt.ma6tvacoder.org');
+(2, 'Site Perso', 'Pantin', 'Mon site personnel', '2017-08-17', 'images/Capture.PNG', 'http://rudy.hericourt.ma6tvacoder.org'),
+(3, 'Projet Collectif', 'Pantin', 'Projet collectif sur le site ACleFeu', '2017-09-05', 'images/projet.jpg', 'http://ACleFeu.com/'),
+(4, 'Travaux Pratique', 'Pantin', 'Creation de la page du site Apple', '2017-04-17', 'images/apple.png', 'http://apple.com/'),
+(5, 'Travaux Pratique', 'Pantin', 'Creation du site Burger', '2017-03-17', 'images/burger.png', 'http://RudyBurger.com/');
 
 -- --------------------------------------------------------
 
@@ -240,7 +243,7 @@ ALTER TABLE `t_perso`
 -- AUTO_INCREMENT pour la table `t_portfolio`
 --
 ALTER TABLE `t_portfolio`
-  MODIFY `port_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `port_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `t_user`
 --
